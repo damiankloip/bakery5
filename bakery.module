@@ -180,9 +180,9 @@ function bakery_user($op, &$array, &$account, $category = NULL) {
 }
 
 /**
- * Implementation of hook_boot().
+ * Implementation of hook_init().
  */
-function bakery_boot() {
+function bakery_init() {
   _bakery_taste_chocolatechip_cookie();
 }
 
