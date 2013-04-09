@@ -751,6 +751,11 @@ function bakery_login() {
  * Custom return for errors during slave login process.
  */
 function bakery_login_return() {
+  // Redirect straight away if there is already a logged in user.
+  if ((bool) $GLOBALS['user']->uid) {
+    drupal_goto();
+  }
+
   $cookie = bakery_taste_oatmeal_cookie();
   if ($cookie) {
     // Valid cookie, now destroy it.
